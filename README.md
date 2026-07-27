@@ -3,19 +3,45 @@
 > An AI-powered personal finance assistant that understands natural language and receipt images to automatically track expenses, monitor monthly budgets, and deliver intelligent monthly spending reports through Telegram.
 
 <p align="center">
-
-![n8n](https://img.shields.io/badge/n8n-Workflow%20Automation-EA4B24?style=for-the-badge&logo=n8n&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini-AI-4285F4?style=for-the-badge&logo=google&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-Firestore-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
-![Telegram](https://img.shields.io/badge/Telegram-Bot-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)
-![QuickChart](https://img.shields.io/badge/QuickChart-Pie%20Charts-6C63FF?style=for-the-badge)
-![JavaScript](https://img.shields.io/badge/JavaScript-Code%20Nodes-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
+  <img src="https://img.shields.io/badge/n8n-Workflow%20Automation-EA4B24?style=for-the-badge&logo=n8n&logoColor=white" alt="n8n" />
+  <img src="https://img.shields.io/badge/Gemini-AI-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini" />
+  <img src="https://img.shields.io/badge/Firebase-Firestore-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Firebase" />
+  <img src="https://img.shields.io/badge/Telegram-Bot-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" />
 </p>
 
 <p align="center">
-  <img src=".github/assets/banner.png" alt="AI Expense Tracker Agent Banner" width="100%">
+  <img src="https://img.shields.io/badge/QuickChart-Pie%20Charts-6C63FF?style=for-the-badge" alt="QuickChart" />
+  <img src="https://img.shields.io/badge/JavaScript-Code%20Nodes-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
 </p>
+
+---
+
+<p align="center">
+  <img src="assets/banner.png" alt="AI Expense Tracker Agent Banner" width="100%">
+</p>
+
+---
+
+## 📑 Table of Contents
+
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Technology Stack](#technology-stack)
+- [System Architecture](#system-architecture)
+- [Workflow 1 — AI Expense Tracking](#workflow-1--ai-expense-tracking)
+- [Workflow 2 — Monthly Expense Report](#workflow-2--monthly-expense-report)
+- [Database Design](#database-design)
+- [Database Relationship](#database-relationship)
+- [Why This Database Design?](#why-this-database-design)
+- [Why This Architecture?](#why-this-architecture)
+- [Design Decisions](#design-decisions)
+- [Challenges & Solutions](#challenges--solutions)
+- [Project Highlights](#project-highlights)
+- [Future Improvements](#future-improvements)
+- [Repository Structure](#repository-structure)
+- [Acknowledgements](#acknowledgements)
+- [License](#license)
+- [Author](#author)
 
 ---
 
@@ -126,38 +152,14 @@ The project is built around two independent n8n workflows that together create a
   - Generates spending analytics and category-wise summaries.
   - Creates a pie chart using QuickChart.
   - Delivers the complete expense report directly to Telegram.
+ 
+---
 
 <p align="center">
-    <img src=".github/assets/architecture.png" width="100%" alt="System Architecture">
+    <img src="assets/architecture.png" width="100%" alt="System Architecture">
 </p>
 
-### High-Level Data Flow
-
-```text
-                  User
-                    │
-                    ▼
-             Telegram Bot
-                    │
-                    ▼
-           n8n Workflow Automation
-                    │
-        ┌───────────┴───────────┐
-        │                       │
-        ▼                       ▼
- Gemini AI              Firebase Firestore
-(Text & Vision)        (Users & Expenses)
-        │                       │
-        └───────────┬───────────┘
-                    ▼
-        Monthly Budget Analysis
-                    │
-                    ▼
-            QuickChart API
-                    │
-                    ▼
-          Telegram Response
-```
+---
 
 ### Architecture Highlights
 
@@ -174,54 +176,12 @@ The project is built around two independent n8n workflows that together create a
 
 The first workflow handles all real-time user interactions. It receives messages from Telegram, understands both natural language and receipt images using Gemini AI, validates the extracted information, stores expenses in Firebase Firestore, calculates monthly spending, and instantly responds with an updated expense summary.
 
+---
+
 <p align="center">
-    <img src=".github/assets/workflow-1-overview.png" width="100%" alt="Workflow 1 Overview">
+    <img src="assets/workflow-1.png" width="100%" alt="Workflow 1 Overview">
 </p>
 
-### Workflow Overview
-
-```text
-Telegram Message
-        │
-        ▼
-Telegram Trigger
-        │
-        ▼
-Command Detection
-        │
-        ├──────────────┐
-        │              │
-        ▼              ▼
-Commands        Expense Processing
-(/start,        (Text / Receipt Image)
- /setlimit,
- /summary)
-        │              │
-        ▼              ▼
-User Verification
-        │
-        ▼
-Monthly Limit Validation
-        │
-        ▼
-Gemini AI Extraction
-        │
-        ▼
-Data Validation
-        │
-        ▼
-Store Expense
-(Firebase Firestore)
-        │
-        ▼
-Monthly Spending Calculation
-        │
-        ▼
-Budget Limit Check
-        │
-        ▼
-Telegram Confirmation
-```
 
 ---
 
@@ -241,6 +201,11 @@ Supported commands include:
 - `/recent`
 - `/export`
 
+
+<p align="center">
+    <img src="assets/telegram-demo-1.jpeg" width="30%"  alt="Workflow 1 Overview">
+</p>
+
 ---
 
 ### Step 2 — Monthly Budget Configuration
@@ -256,6 +221,10 @@ Example:
 The configured budget is stored in the **limits** collection inside Firebase Firestore and is later used for budget monitoring and monthly report generation.
 
 If a user attempts to record an expense before setting a limit, the workflow prevents further processing and requests budget configuration first.
+
+<p align="center">
+    <img src="assets/telegram-demo-2.jpeg" width="30%"  alt="Workflow 1 Overview">
+</p>
 
 ---
 
@@ -280,7 +249,7 @@ Users can also upload payment receipts or transaction screenshots.
 Gemini AI analyzes the image and extracts the required expense information automatically.
 
 <p align="center">
-    <img src=".github/assets/workflow-1-input.png" width="100%" alt="Expense Input">
+    <img src="assets/telegram-demo-4.png" width="30%" alt="Expense Input">
 </p>
 
 ---
@@ -392,7 +361,7 @@ This Month Total: ₹1850
 This provides immediate feedback while keeping users informed about their current monthly spending.
 
 <p align="center">
-    <img src=".github/assets/workflow-1-demo.png" width="100%" alt="Workflow 1 Demo">
+    <img src="assets/telegram-demo-3.jpeg" width="30%" alt="Workflow 1 Demo">
 </p>
 
 ---
@@ -401,9 +370,13 @@ This provides immediate feedback while keeping users informed about their curren
 
 The second workflow is a fully automated reporting system that runs on a scheduled basis. It analyzes each registered user's previous month's expenses, generates spending insights, creates a category-wise pie chart, and delivers a personalized monthly report directly to Telegram.
 
+---
+
 <p align="center">
-    <img src=".github/assets/workflow-2.png" width="100%" alt="Workflow 2 - Monthly Expense Report">
+    <img src="assets/workflow-2.png" width="100%" alt="Workflow 2 - Monthly Expense Report">
 </p>
+
+---
 
 ### Workflow Overview
 
@@ -604,10 +577,6 @@ Two primary collections power the application:
 
 Separating user configuration from transactional data simplifies querying, reporting, and future feature expansion.
 
-<p align="center">
-    <img src=".github/assets/firestore.png" width="100%" alt="Firebase Firestore Collections">
-</p>
-
 ---
 
 ### Collection: `limits`
@@ -626,6 +595,10 @@ This collection maintains each registered user's monthly spending configuration.
 - Store monthly spending limits
 - Identify users during scheduled report generation
 - Compare monthly spending against the configured budget
+
+<p align="center">
+    <img src="assets/firebase-limit.png" width="100%" alt="Firebase Firestore limit Collections">
+</p>
 
 ---
 
@@ -651,6 +624,10 @@ Every expense recorded by the AI agent is stored as an individual document insid
 - Generate category-wise analytics
 - Produce monthly reports
 - Generate spending visualizations
+
+<p align="center">
+    <img src="assets/firebase-expenses.png" width="100%" alt="Firebase Firestore expenses Collections">
+</p>
 
 ---
 
