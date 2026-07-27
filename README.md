@@ -828,38 +828,31 @@ The current implementation establishes a strong foundation for AI-powered person
 ## Repository Structure
 
 ```text
-AI-Expense-Tracker-Agent/
+AI-EXPENSE-TRACKER-AGENT/
 │
-├── .github/
-│   └── assets/
-│       ├── banner.png
-│       ├── architecture.png
-│       ├── workflow-1-overview.png
-│       ├── workflow-1-input.png
-│       ├── workflow-1-demo.png
-│       ├── workflow-2.png
-│       ├── firestore.png
-│       ├── telegram-demo-1.jpg
-│       ├── telegram-demo-2.jpg
-│       ├── telegram-demo-3.jpg
-│       └── monthly-report.jpg
+├── assets/
+│   ├── ai-processing-pipeline.png
+│   ├── architecture.png
+│   ├── banner.png
+│   ├── firebase-expenses.png
+│   ├── firebase-limit.png
+│   ├── firestore-er-diagram.png      (Pending)
+│   ├── telegram-demo-1.jpeg
+│   ├── telegram-demo-2.jpeg
+│   ├── telegram-demo-3.jpeg
+│   ├── telegram-demo-4.png
+│   ├── user-journey-diagram.png      (Pending)
+│   ├── workflow-1.png
+│   └── workflow-2.png
 │
 ├── docs/
 │   ├── ARCHITECTURE.md
-│   ├── WORKFLOW.md
 │   ├── DATABASE.md
 │   └── SYSTEM-DESIGN.md
 │
-├── images/
-│   ├── workflow-1.png
-│   ├── workflow-2.png
-│   ├── firestore-limits.png
-│   ├── firestore-expenses.png
-│   └── telegram-demo.png
-│
-├── README.md
+├── index.html
 ├── LICENSE
-└── .gitignore
+└── README.md
 ```
 
 ---
