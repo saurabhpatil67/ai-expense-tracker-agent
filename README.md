@@ -116,10 +116,7 @@ The entire solution is powered by **two automated n8n workflows**, providing an 
 
 - **Dual Workflow Architecture**
   - Separates real-time expense tracking from scheduled monthly reporting, resulting in a modular and maintainable automation system.
-
- <p align="right">
-  <a href="#ai-expense-tracker-agent">⬆ Back to Top</a>
-</p>
+  - 
 ---
 
 ## Technology Stack
@@ -172,6 +169,10 @@ The project is built around two independent n8n workflows that together create a
 - Firestore maintains separate collections for user settings and expense records, improving scalability and query performance.
 - Monthly analytics and chart generation are fully automated through scheduled workflow execution.
 - Modular workflow design allows each component to be maintained and extended independently.
+
+<p align="right">
+  <a href="#ai-expense-tracker-agent">⬆ Back to Top</a>
+</p>
 
 ---
 
@@ -365,6 +366,10 @@ This provides immediate feedback while keeping users informed about their curren
 
 <p align="center">
     <img src="assets/telegram-demo-3.jpeg" width="30%" alt="Workflow 1 Demo">
+</p>
+
+<p align="right">
+  <a href="#ai-expense-tracker-agent">⬆ Back to Top</a>
 </p>
 
 ---
@@ -566,6 +571,9 @@ The visualization provides an immediate overview of spending distribution, makin
 - Delivers reports directly through Telegram
 - Built as an independent workflow for improved scalability and maintainability
 
+<p align="right">
+  <a href="#ai-expense-tracker-agent">⬆ Back to Top</a>
+</p>
 
 ---
 
@@ -632,6 +640,11 @@ Every expense recorded by the AI agent is stored as an individual document insid
     <img src="assets/firebase-expenses.png" width="100%" alt="Firebase Firestore expenses Collections">
 </p>
 
+
+<p align="right">
+  <a href="#ai-expense-tracker-agent">⬆ Back to Top</a>
+</p>
+
 ---
 
 ## Database Relationship
@@ -682,6 +695,11 @@ The Firestore schema was intentionally designed to separate **user configuration
 
 This structure enables the AI Expense Tracker Agent to perform real-time expense tracking while efficiently generating monthly analytics without mixing user preferences with transactional records.
 
+
+<p align="right">
+  <a href="#ai-expense-tracker-agent">⬆ Back to Top</a>
+</p>
+
 ---
 
 ## Why This Architecture?
@@ -696,6 +714,11 @@ Every technology used in this project was selected to solve a specific problem w
 | **Telegram Bot** | Acts as the complete user interface, allowing users to interact with the system through a familiar messaging application without installing a separate app. |
 | **QuickChart API** | Dynamically generates pie chart visualizations from category-wise expense data without requiring a dedicated charting library or frontend dashboard. |
 | **JavaScript Code Nodes** | Implements custom business logic including validation, monthly calculations, budget analysis, report generation, and chart data preparation directly inside n8n workflows. |
+
+
+<p align="right">
+  <a href="#ai-expense-tracker-agent">⬆ Back to Top</a>
+</p>
 
 ---
 
@@ -768,6 +791,11 @@ Budget validation occurs immediately after every expense is recorded.
 
 Users receive instant feedback whenever they exceed their configured monthly spending limit, helping them stay aware of their financial habits.
 
+
+<p align="right">
+  <a href="#ai-expense-tracker-agent">⬆ Back to Top</a>
+</p>
+
 ---
 
 ## Challenges & Solutions
@@ -783,6 +811,10 @@ Building an AI-powered expense tracking system required solving several practica
 | Multiple users need independent reports during scheduled execution. | Iterate through registered users one by one, generating personalized analytics for each account. |
 | Visual spending insights are required without developing a frontend dashboard. | Integrated QuickChart API to generate category-wise pie charts dynamically from workflow data. |
 | User settings and transaction history require different access patterns. | Designed separate Firestore collections for configuration data and transactional records to improve maintainability and scalability. |
+
+<p align="right">
+  <a href="#ai-expense-tracker-agent">⬆ Back to Top</a>
+</p>
 
 ---
 
@@ -825,6 +857,10 @@ The current implementation establishes a strong foundation for AI-powered person
 - Interactive web dashboard
 - Mobile application integration
 - Advanced financial insights powered by AI
+
+<p align="right">
+  <a href="#ai-expense-tracker-agent">⬆ Back to Top</a>
+</p>
 
 ---
 
