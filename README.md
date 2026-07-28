@@ -914,7 +914,7 @@ Their platforms made it possible to build an end-to-end AI-powered expense track
 
 This project is licensed under the **MIT License**.
 
-You are free to use, modify, and distribute this project in accordance with the terms of the license.
+You are free to use and distribute this project in accordance with the terms of the license.
 
 ---
 
