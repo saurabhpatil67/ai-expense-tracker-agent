@@ -57,6 +57,18 @@ The entire solution is powered by **two automated n8n workflows**, providing an 
 
 ---
 
+## User Journey
+
+The following diagram illustrates the complete user experience from registration to receiving automated monthly reports.
+
+<p align="center">
+  <img src="assets/user-journey-diagram.png"
+       alt="User Journey Diagram"
+       width="100%">
+</p>
+
+---
+
 ## Key Features
 
 - **Natural Language Expense Tracking**
@@ -183,7 +195,17 @@ The first workflow handles all real-time user interactions. It receives messages
 ---
 
 <p align="center">
-    <img src="assets/workflow-1.png" width="100%" alt="Workflow 1 Overview">
+  <img src="assets/ai-processing-pipeline.png"
+       alt="AI Processing Pipeline"
+       width="100%">
+</p>
+
+---
+
+## Workflow 1
+
+<p align="center">
+    <img src="assets/workflow-1.png" width="100%" alt="Workflow 1 ">
 </p>
 
 
@@ -590,6 +612,14 @@ Separating user configuration from transactional data simplifies querying, repor
 
 ---
 
+<p align="center">
+    <img src="assets/firestore-er-diagram.png"
+         width="100%"
+         alt="Firebase Firestore ER Diagram">
+</p>
+
+---
+
 ### Collection: `limits`
 
 This collection maintains each registered user's monthly spending configuration.
@@ -644,38 +674,6 @@ Every expense recorded by the AI agent is stored as an individual document insid
 <p align="right">
   <a href="#ai-expense-tracker-agent">⬆ Back to Top</a>
 </p>
-
----
-
-## Database Relationship
-
-```text
-                    limits
-          ┌──────────────────────┐
-          │ telegram_user_id     │
-          │ monthly_limit        │
-          │ created_at           │
-          └──────────┬───────────┘
-                     │
-                     │
-                     │ One User
-                     │
-                     ▼
-              Multiple Expenses
-                     │
-                     ▼
-          ┌──────────────────────┐
-          │ amount               │
-          │ category             │
-          │ merchant             │
-          │ payment_type         │
-          │ date                 │
-          │ telegram_user_id     │
-          │ created_at           │
-          └──────────────────────┘
-```
-
-Every expense document is linked to its owner through the **telegram_user_id**, allowing the workflows to efficiently retrieve user-specific transactions without duplicating user configuration.
 
 ---
 
