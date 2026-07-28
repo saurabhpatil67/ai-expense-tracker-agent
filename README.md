@@ -39,6 +39,7 @@
 - [Project Highlights](#project-highlights)
 - [Future Improvements](#future-improvements)
 - [Repository Structure](#repository-structure)
+- [Documentation](#-documentation)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
 - [Author](#author)
@@ -891,6 +892,24 @@ AI-EXPENSE-TRACKER-AGENT/
 ├── LICENSE
 └── README.md
 ```
+
+---
+
+---
+
+## 📚 Documentation
+
+Detailed technical documentation for this project is available in the `docs` folder.
+
+| Document | Description |
+|----------|-------------|
+| 📐 [System Design](docs/SYSTEM-DESIGN.md) | Explains the overall system design, objectives, requirements, scalability, and architectural decisions. |
+| 🏗️ [Architecture](docs/ARCHITECTURE.md) | Describes the complete system architecture, component interactions, workflows, and data flow. |
+| 🗄️ [Database Design](docs/DATABASE.md) | Documents the Firestore database schema, collections, document structure, relationships, and design decisions. |
+
+<p align="right">
+  <a href="#ai-expense-tracker-agent">⬆ Back to Top</a>
+</p>
 
 ---
 
