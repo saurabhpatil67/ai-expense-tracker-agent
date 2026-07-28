@@ -938,5 +938,3 @@ AI Automation Engineer | Generative AI Enthusiast
 It helps others discover the project and motivates future improvements.
 
 </div>
-
----
